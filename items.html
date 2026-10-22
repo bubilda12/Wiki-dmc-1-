@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="pics/bbgirl.png" type="image/png">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>DMC Wiki</title>
+</head>
+
+<body>
+    <!-- хеадер -->
+    <header class="header">
+        <div class="container header__container">
+
+            <!-- логотип -->
+            <a href="index.html" class="logo header__logo">
+                <img src="pics/logo.png" alt="Devil May Cry" class="header__img">
+            </a>
+
+            <!-- название -->
+            <h2 class="header__name">Devil May Cry Wiki</h2>
+
+            <div class="burger-menu">
+                <span></span>
+            </div>
+
+            <!-- навигация хеадера -->
+            <nav class="navig header__nav testnav">
+
+                <!-- список навигации хеадера -->
+                <ul class="header__list navlist">
+
+                    <li class="header__navItems">
+                        <a href="index.html">главная</a>
+                    </li>
+
+                    <li class="header__navItems">
+                        <a href="characters.html">персонажи</a>
+                    </li>
+
+                    <li class="header__navItems">
+                        <a href="locations.html">локации</a>
+                    </li>
+
+                    <li class="header__navItems">
+                        <a href="items.html">предметы</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- инпут хеадера -->
+            <div class="header__input">
+                <input type="text" name="search" id="search" placeholder="Искать на вики">
+            </div>
+
+            <div class="header__theme">
+                <input type="checkbox" name="theme" id="theme">
+            </div>
+
+            <div class="header__label">
+                <label for="theme"></label>
+            </div>
+        </div>
+    </header>
+
+    <!-- разделение в мейн -->
+    <div class="wrapper">
+        <!-- боковая навигация -->
+        <div class="aside">
+            <div class="container aside__nav-container">
+
+                <!-- навигация -->
+                <h3 class="aside__head">Навигация</h3>
+                <ul class="aside__nav">
+                    <li class="aside__items">
+                        <a href="index.html">главная страница</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">правки</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">о нас</a>
+                    </li>
+                </ul>
+
+                <!-- сообщество -->
+                <h3 class="aside__head">Сообщество</h3>
+                <ul class="aside__nav">
+                    <li class="aside__items">
+                        <a href="rules.html">правила</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">гайды</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">чат для коммуникации</a>
+                    </li>
+                </ul>
+
+                <!-- картинка меча -->
+                 <div class="aside__img">
+                    <img src="pics/sword.png" alt="Sword" class="aside__sword">
+                 </div>
+            </div>
+        </div>
+
+        <!-- главная часть -->
+        <!-- Основной контент -->
+        <main>
+            <!-- оружие будет с выпадающей механикой т.е вставки на каждого персонажа (данте > все его оружия и т.п) -->
+            <div class="weaponsmain">
+                <div class="pers">
+                    <div class="weap-Dante pers__weap"> 
+                        <h3>Данте</h3>
+                        <img src="pics/weapon-dante.jpg" alt="данте">
+                    </div>
+                   
+                    <div class="weapons__items">
+                        <div class="weapon">
+                           <img src="pics/weapons/Alastor.png" alt="">
+                            <p>Аластор - на острове Маллет меч буквально оживает и пронзает Данте насквозь через каменную скульптуру женщины, после чего Данте подчиняет его себе.</p> 
+                        </div>
+
+                        <div class="weapon">
+                            <img src="pics/weapons/Devil_Sword_Sparda.png" alt="">
+                            <p>Меч Спарды - легендарный меч Спарды. Первое появление было в ДМС 1, Данте использует его против Вергилия.</p>
+                        </div>
+                        
+                        <div class="weapon">
+                            <img src="pics/weapons/Ebony___Ivory.png" alt="">
+                            <p>Эбони и Айвори — это культовые пистолеты Данте, которые он создал сам, поэтому они принадлежат ему с самого начала большинства игр и не требуют внутриигрового получения.</p>
+                        </div>
+                        
+                        <div class="weapon">
+                            <img src="pics/weapons/Grenade_Gun.png" alt="">
+                            <p> Лежит на скелете солдата в Миссии 8. Если пропустите, пушка перелетит в комнату со статуей прокачки в конце Миссии 9.</p>
+                        </div>
+                        
+                        <div class="weapon">
+                            <img src="pics/weapons/Needlegun.png" alt="">
+                            <p>Лежит прямо на дне водоема в самом начале Миссии 12. Это единственное огнестрельное оружие в игре, которое стреляет под водой.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pers">
+                    <div class="weap-Vergil pers__weap"> 
+                        <h3>Вергилий</h3>
+                        <img src="pics/vergil-weapon.jpg" alt="вергилий-урод">
+                    </div>
+                    
+                    <div class="weapons__items">
+                        <div class="weapon">
+                            <img src="pics/weapons/Summoned_Swords.png" alt="">
+                            <p>Призванные мечи, также известные как Phantom Blades или Mirage Blades — это уникальная магическая способность Вергилия, заменяющая ему огнестрельное оружие.</p>
+                        </div>
+
+                        <div class="weapon">
+                            <img src="pics/weapons/Yamato_DMC5.png" alt="">
+                            <p>Ямато — это визитная карточка, главное оружие Вергилия и один из самых культовых мечей в истории видеоигр. В отличие от огромного бродсорда Данте, Ямато представляет собой изящную традиционную японскую катану, обладающую невероятной мистической силой</p>
+                        </div>
+
+                        <div class="weapon">
+                            <img src="pics/weapons/Nelo_Angelos_Sword.png" alt="">
+                            <p>Меч Нело Анджело — это колоссальное демоническое оружие, созданное владыкой Преисподней Мундусом специально для порабощенного Вергилия. 
+                                В официальном лоре и внутриигровых файлах у этого клинка нет собственного имени, 
+                                однако он обладает уникальным мрачным дизайном и невероятной разрушительной силой.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<script src="bbbb.js"></script>
+<script src="tables.js"></script>
+</body>
+</html>

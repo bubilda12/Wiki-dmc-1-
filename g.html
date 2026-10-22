@@ -1,0 +1,675 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+
+    body{
+        font-family:Arial, Helvetica, sans-serif;
+        background:#111;
+        color:white;
+    }
+
+    .encyclopedia{
+        width:1400px;
+        margin:60px auto;
+    }
+
+    /* ========================= */
+    /* Табы */
+    /* ========================= */
+
+    .tabs{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:40px;
+    }
+
+    .tab{
+        background:none;
+        border:none;
+        color:white;
+        font-size:32px;
+        font-weight:bold;
+        cursor:pointer;
+        padding-bottom:10px;
+        border-bottom:3px solid transparent;
+        opacity:.5;
+        transition:.3s;
+    }
+
+    .tab:hover{
+        opacity:.8;
+    }
+
+    .tab.active{
+        opacity:1;
+        border-color:#8b0000;
+    }
+
+    /* ========================= */
+    /* Основной блок */
+    /* ========================= */
+
+    .content{
+        display:flex;
+        gap:40px;
+    }
+
+    /* Персонажи */
+
+    .heroes-layout .info-wrapper{
+        order:1;
+    }
+
+    .heroes-layout .cards-wrapper{
+        order:2;
+    }
+
+    /* Враги */
+
+    .enemies-layout .info-wrapper{
+        order:2;
+    }
+
+    .enemies-layout .cards-wrapper{
+        order:1;
+    }
+
+    /* ========================= */
+    /* Информация */
+    /* ========================= */
+
+    .info-wrapper{
+        width:430px;
+    }
+
+    .info{
+        display:none;
+        background:#1d1d1d;
+        border-radius:20px;
+        padding:30px;
+        border:2px solid #333;
+    }
+
+    .info.active{
+        display:block;
+    }
+
+    .info img{
+        width:100%;
+        height:350px;
+        object-fit:cover;
+        border-radius:15px;
+        margin-bottom:25px;
+    }
+
+    .info h2{
+        text-align:center;
+        margin-bottom:20px;
+        font-size:34px;
+        color:#c31414;
+    }
+
+    .info p{
+        line-height:1.7;
+        color:#d4d4d4;
+        margin-bottom:25px;
+    }
+
+    /* ========================= */
+    /* Характеристики */
+    /* ========================= */
+
+    .stats{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .stats div{
+        background:#292929;
+        padding:14px 18px;
+        border-radius:12px;
+        font-size:17px;
+    }
+
+    /* ========================= */
+    /* Карточки */
+    /* ========================= */
+
+    .cards-wrapper{
+        flex:1;
+    }
+
+    .cards{
+        display:none;
+        grid-template-columns:repeat(3,1fr);
+        gap:25px;
+    }
+
+    .cards.active{
+        display:grid;
+    }
+
+    .card{
+        background:#1d1d1d;
+        border:2px solid transparent;
+        border-radius:18px;
+        padding:15px;
+        text-align:center;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    .card:hover{
+        transform:translateY(-8px);
+        border-color:#666;
+    }
+
+    .card.active{
+        border-color:#8b0000;
+        box-shadow:0 0 20px rgba(139,0,0,.8);
+        transform:scale(1.03);
+    }
+
+    .card img{
+        width:100%;
+        height:220px;
+        object-fit:cover;
+        border-radius:12px;
+        margin-bottom:15px;
+    }
+
+    .card h3{
+        font-size:24px;
+    }
+
+    /* ========================= */
+    /* Анимации */
+    /* ========================= */
+
+    .tab,
+    .card,
+    .info{
+        transition:.3s ease;
+    }
+
+    /* ========================= */
+    /* Адаптив */
+    /* ========================= */
+
+    @media(max-width:1450px){
+
+        .encyclopedia{
+            width:95%;
+        }
+
+    }
+
+    @media(max-width:1000px){
+
+        .content{
+            flex-direction:column;
+        }
+
+        .heroes-layout .info-wrapper,
+        .enemies-layout .info-wrapper{
+            width:100%;
+            order:1;
+        }
+
+        .heroes-layout .cards-wrapper,
+        .enemies-layout .cards-wrapper{
+            order:2;
+        }
+
+    }
+
+    @media(max-width:700px){
+
+        .cards{
+            grid-template-columns:repeat(2,1fr);
+        }
+
+        .tab{
+            font-size:24px;
+        }
+
+    }
+
+    @media(max-width:500px){
+
+        .cards{
+            grid-template-columns:1fr;
+        }
+
+    }
+    </style>
+</head>
+<body>
+   <section class="encyclopedia">
+
+        <!-- ======================= -->
+        <!-- Вкладки -->
+        <!-- ======================= -->
+
+        <div class="tabs">
+
+            <button class="tab active" data-tab="heroes">
+                Персонажи
+            </button>
+
+            <button class="tab" data-tab="enemies">
+                Враги
+            </button>
+
+        </div>
+
+        <!-- ======================= -->
+        <!-- Основной контент -->
+        <!-- ======================= -->
+        <div class="content heroes-layout">
+
+            <!-- ======================= -->
+            <!-- Информация -->
+            <!-- ======================= -->
+
+            <div class="info-wrapper">
+
+                <!-- ================================= -->
+                <!-- Данте -->
+                <!-- ================================= -->
+
+                <div class="info active hero-info">
+
+                    <img src="pics/obzorDante.jpg" alt="Данте">
+
+                    <h2>Данте</h2>
+
+                    <p>
+                        Сын демона Спарды. Данте — никто иной, как охотник на демонов,
+                        он гоняется за теми, кто убил его мать и поработил брата.
+                    </p>
+
+                    <div class="stats">
+
+                        <div>Пол: Мужской</div>
+
+                        <div>Раса: Полудемон</div>
+
+                        <div>Возраст: Неизвестно</div>
+
+                        <div>Оружие: Пистолеты и «Мятежник»</div>
+
+                        <div>Деятельность: Охота на демонов</div>
+
+                        <div>Озвучка: Дрю Кумбс</div>
+
+                        <div>Дебют: Devil May Cry (2001)</div>
+
+                    </div>
+
+                </div>
+
+                <!-- ================================= -->
+                <!-- Триш -->
+                <!-- ================================= -->
+
+                <div class="info hero-info">
+
+                    <img src="pics/obzortrish.jpg" alt="Триш">
+
+                    <h2>Триш</h2>
+
+                    <p>
+                        Загадочная женщина, сильно напоминающая мать Данте, Еву.
+                    </p>
+
+                    <div class="stats">
+
+                        <div>Пол: Женский</div>
+
+                        <div>Раса: Демон</div>
+
+                        <div>Возраст: Неизвестно</div>
+
+                        <div>Оружие: Свет и Тень</div>
+
+                        <div>Деятельность: Святой рыцарь исполнитель</div>
+
+                        <div>Озвучка: Сара Лафлер</div>
+
+                        <div>Дебют: Devil May Cry (2001)</div>
+
+                    </div>
+
+                    </div>
+
+                    <!-- ================================= -->
+                    <!-- Вергилий -->
+                    <!-- ================================= -->
+
+                    <div class="info hero-info">
+
+                        <img src="pics/obzorvirgil.jpg" alt="Вергилий">
+
+                        <h2>Вергилий</h2>
+
+                        <p>
+                            Вергилий был готов сделать всё возможное ради получения силы
+                            Спарды.
+                        </p>
+
+                        <div class="stats">
+
+                            <div>Пол: Мужской</div>
+
+                            <div>Раса: Полудемон</div>
+
+                            <div>Возраст: Неизвестно</div>
+
+                            <div>Оружие: Ямато</div>
+
+                            <div>Псевдоним: Тёмный убийца</div>
+
+                            <div>Озвучка: Дэниел Саутворт</div>
+
+                            <div>Дебют: Devil May Cry (2001 год)</div>
+
+                        </div>
+
+                    </div>
+                    <!-- ================================= -->
+                    <!-- Мундус -->
+                    <!-- ================================= -->
+
+                <div class="info enemy-info">
+
+                    <img src="pics/obzormundus.jpg" alt="Мундус">
+
+                    <h2>Мундус</h2>
+
+                    <p>
+                        «И снова я должен лицезреть Спарду… Странная судьба,
+                        не так ли?»
+                    </p>
+
+                    <div class="stats">
+
+                        <div>👤 Пол: Мужской</div>
+
+                        <div>👹 Раса: Демон</div>
+
+                        <div>🎂 Возраст: Неизвестно</div>
+
+                        <div>⚔️ Оружие: Божественные и демонические способности</div>
+
+                        <div>👑 Роль: Антагонист</div>
+
+                        <div>🎙️ Озвучка: Луис Хертэм</div>
+
+                        <div>🎮 Дебют: Devil May Cry (2001 год)</div>
+
+                    </div>
+
+                </div>
+
+                <!-- ================================= -->
+                <!-- Спарда -->
+                <!-- ================================= -->
+
+                <div class="info enemy-info">
+
+                    <img src="pics/obzorsparda.jpg" alt="Спарда">
+
+                    <h2>Спарда</h2>
+
+                    <p>
+                        Могущественный демон-мечник, известен как
+                        «Легендарный Тёмный Рыцарь». Две тысячи лет назад
+                        в нём «проснулась справедливость», и он в одиночку
+                        одолел Мундуса и его легионы.
+                    </p>
+
+                    <div class="stats">
+
+                        <div>👤 Пол: Мужской</div>
+
+                        <div>👹 Раса: Демон</div>
+
+                        <div>🎂 Возраст: Неизвестно</div>
+
+                        <div>⚔️ Оружие: Меч Спарды</div>
+
+                        <div>🛡️ Звание: Легендарный Тёмный рыцарь</div>
+
+                        <div>🎙️ Озвучка: Луис Хертэм</div>
+
+                        <div>🎮 Дебют: Devil May Cry (2001 год)</div>
+
+                    </div>
+
+                </div>
+
+                <!-- ================================= -->
+                <!-- Данте (враг) -->
+                <!-- ================================= -->
+
+                <div class="info enemy-info">
+
+                    <img src="pics/obzorDante.jpg" alt="Данте">
+
+                    <h2>Данте</h2>
+
+                    <p>
+                        Сын демона Спарды. Данте — никто иной, как охотник
+                        на демонов, он гоняется за теми, кто убил его мать
+                        и поработил брата.
+                    </p>
+
+                    <div class="stats">
+
+                        <div>👤 Пол: Мужской</div>
+
+                        <div>👹 Раса: Полудемон</div>
+
+                        <div>🎂 Возраст: Неизвестно</div>
+
+                        <div>⚔️ Оружие: Пистолеты и «Мятежник»</div>
+
+                        <div>🎯 Деятельность: Охота на демонов</div>
+
+                        <div>🎙️ Озвучка: Дрю Кумбс</div>
+
+                        <div>🎮 Дебют: Devil May Cry (2001)</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ======================= -->
+            <!-- Карточки -->
+            <!-- ======================= -->
+
+            <div class="cards-wrapper">
+
+                <!-- Персонажи -->
+
+                <div class="cards heroes active">
+
+                    <div class="card active">
+                        <img src="pics/dante.png" alt="Данте">
+                        <h3>Данте</h3>
+                    </div>
+
+                    <div class="card">
+                        <img src="pics/trish.png" alt="Триш">
+                        <h3>Триш</h3>
+                    </div>
+
+                    <div class="card">
+                        <img src="pics/virgl.png" alt="Вергилий">
+                        <h3>Вергилий</h3>
+                    </div>
+
+                </div>
+
+                <!-- Враги -->
+
+                <div class="cards enemies">
+
+                    <div class="card active">
+                        <img src="pics/mundus.png" alt="Мундус">
+                        <h3>Мундус</h3>
+                    </div>
+
+                    <div class="card">
+                        <img src="pics/sparda.png" alt="Спарда">
+                        <h3>Спарда</h3>
+                    </div>
+
+                    <div class="card">
+                        <img src="pics/dante.png" alt="Данте">
+                        <h3>Данте</h3>
+                    </div>
+
+                </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+    const tabs = document.querySelectorAll(".tab");
+
+    const content = document.querySelector(".content");
+
+    const heroCards = document.querySelectorAll(".heroes .card");
+    const enemyCards = document.querySelectorAll(".enemies .card");
+
+    const heroInfos = document.querySelectorAll(".hero-info");
+    const enemyInfos = document.querySelectorAll(".enemy-info");
+
+    const infos = document.querySelectorAll(".info");
+
+    const heroesBlock = document.querySelector(".heroes");
+    const enemiesBlock = document.querySelector(".enemies");
+
+    // ======================
+    // Переключение вкладок
+    // ======================
+
+    tabs.forEach(tab => {
+
+        tab.addEventListener("click", function(){
+
+            tabs.forEach(tab=>{
+                tab.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            // Скрываем всю информацию
+            infos.forEach(info=>{
+            info.classList.remove("active");
+            });
+
+            if(this.dataset.tab === "heroes"){
+
+                heroesBlock.classList.add("active");
+                enemiesBlock.classList.remove("active");
+
+                content.classList.remove("enemies-layout");
+                content.classList.add("heroes-layout");
+
+                heroCards.forEach(card=>{
+                    card.classList.remove("active");
+                });
+
+                heroCards[0].classList.add("active");
+                heroInfos[0].classList.add("active");
+
+            }else{
+
+                enemiesBlock.classList.add("active");
+                heroesBlock.classList.remove("active");
+
+                content.classList.remove("heroes-layout");
+                content.classList.add("enemies-layout");
+
+                enemyCards.forEach(card=>{
+                    card.classList.remove("active");
+                });
+
+                enemyCards[0].classList.add("active");
+                enemyInfos[0].classList.add("active");
+
+            }
+
+        });
+
+    });
+
+    // ======================
+    // Карточки персонажей
+    // ======================
+
+    heroCards.forEach((card,index)=>{
+
+        card.addEventListener("click",function(){
+
+            heroCards.forEach(card=>{
+                card.classList.remove("active");
+            });
+
+            heroInfos.forEach(info=>{
+                info.classList.remove("active");
+            });
+
+            this.classList.add("active");
+            heroInfos[index].classList.add("active");
+
+        });
+
+    });
+
+    // ======================
+    // Карточки врагов
+    // ======================
+
+    enemyCards.forEach((card,index)=>{
+
+        card.addEventListener("click",function(){
+
+            enemyCards.forEach(card=>{
+                card.classList.remove("active");
+            });
+
+            enemyInfos.forEach(info=>{
+                info.classList.remove("active");
+            });
+
+            this.classList.add("active");
+            enemyInfos[index].classList.add("active");
+
+        });
+
+    });
+</script>
+</body>
+</html>
+```

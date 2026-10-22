@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="pics/bbgirl.png" type="image/png">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>DMC Wiki</title>
+</head>
+
+<body>
+    <!-- хеадер -->
+    <header class="header">
+
+        <div class="container header__container">
+
+            <!-- логотип -->
+            <a href="index.html" class="logo header__logo">
+                <img src="pics/logo.png" alt="Devil May Cry" class="header__img">
+            </a>
+            
+            <div class="burger-menu">
+                <span>
+
+                </span>
+            </div>
+            <!-- название -->
+            <h2 class="header__name">Devil May Cry Wiki</h2>
+
+            <!-- навигация хеадера -->
+            <nav class="navig header__nav">
+
+                <!-- список навигации хеадера -->
+                <ul class="header__list">
+
+                    <li class="header__navItems">
+                        <a href="index.html">главная</a>
+                    </li>
+
+                    <li class="header__navItems">
+                        <a href="characters.html">персонажи</a>
+                    </li>
+
+                    <li class="header__navItems">
+                        <a href="locations.html">локации</a>
+                    </li>
+
+                    <li class="header__navItems">
+                        <a href="items.html">предметы</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- инпут хеадера -->
+            <div class="header__input">
+                <input type="text" name="search" id="search" placeholder="Искать на вики">
+            </div>
+
+            <div class="header__theme">
+                <input type="checkbox" name="theme" id="theme">
+            </div>
+
+            <div class="header__label">
+                <label for="theme"></label>
+            </div>
+        </div>
+    </header>
+
+    <!-- разделение в мейн -->
+    <div class="wrapper">
+        <!-- боковая навигация -->
+        <div class="aside">
+            <div class="container aside__nav-container">
+
+                <!-- навигация -->
+                <h3 class="aside__head">Навигация</h3>
+                <ul class="aside__nav">
+                    <li class="aside__items">
+                        <a href="index.html">главная страница</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">правки</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">о нас</a>
+                    </li>
+                </ul>
+
+                <!-- сообщество -->
+                <h3 class="aside__head">Сообщество</h3>
+                <ul class="aside__nav">
+                    <li class="aside__items">
+                        <a href="rules.html">правила</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">гайды</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">чат для коммуникации</a>
+                    </li>
+                </ul>
+
+                <!-- картинка меча -->
+                 <div class="aside__img">
+                    <img src="pics/sword.png" alt="Sword" class="aside__sword">
+                 </div>
+            </div>
+        </div>
+
+        <!-- главная часть -->
+        <main>
+            <div class="rules__head">
+                <h2 class="title">Правила сайта</h2>
+            </div>
+            
+
+            <div class="rules__image">
+                <img src="pics/rules.png" alt="fnaf rules">
+            </div>
+        </main>
+    </div>
+    <script src="scrypr.js"></script>
+</body>

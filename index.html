@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="pics/bbgirl.png" type="image/png">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>DMC Wiki</title>
+</head>
+
+<body>
+    <!-- хеадер -->
+    <header class="header">
+        <div class="container header__container">
+            <!-- логотип -->
+            <a href="index.html" class="logo header__logo">
+                <img src="pics/logo.png" alt="Devil May Cry" class="header__img">
+            </a>
+
+            <!-- название -->
+            <h2 class="header__name">Devil May Cry Wiki</h2>
+
+            <!-- навигация хеадера -->
+            <nav class="navig header__nav">
+
+                <!-- список навигации хеадера -->
+                <ul class="header__list">
+
+                    <li class="header__navItems">
+                        <a href="index.html">главная</a>
+                    </li>
+
+                    <li class="header__navItems">
+                        <a href="characters.html">персонажи</a>
+                    </li>
+
+                    <li class="header__navItems">
+                        <a href="locations.html">локации</a>
+                    </li>
+
+                    <li class="header__navItems">
+                        <a href="items.html">предметы</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- инпут хеадера -->
+            <div class="header__input">
+                <input type="text" name="search" id="search" placeholder="Искать на вики">
+            </div>
+
+            <div class="header__theme">
+                <input type="checkbox" name="theme" id="theme">
+            </div>
+
+            <div class="header__label">
+                <label for="theme"></label>
+            </div>
+        </div>
+    </header>
+
+    <!-- разделение в мейн -->
+    <div class="wrapper">
+        <!-- боковая навигация -->
+        <div class="aside">
+            <div class="container aside__nav-container">
+
+                <!-- навигация -->
+                <h3 class="aside__head">Навигация</h3>
+                <ul class="aside__nav">
+                    <li class="aside__items">
+                        <a href="index.html">главная страница</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">правки</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">о нас</a>
+                    </li>
+                </ul>
+
+                <!-- сообщество -->
+                <h3 class="aside__head">Сообщество</h3>
+                <ul class="aside__nav">
+                    <li class="aside__items">
+                        <a href="rules.html">правила</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">гайды</a>
+                    </li>
+                    <li class="aside__items">
+                        <a href="rules.html">чат для коммуникации</a>
+                    </li>
+                </ul>
+
+                <!-- картинка меча -->
+                 <div class="aside__img">
+                    <img src="pics/sword.png" alt="Sword" class="aside__sword">
+                 </div>
+            </div>
+        </div>
+
+        <!-- главная часть -->
+        <!-- Основной контент -->
+        <main>
+            <!-- верхняя часть -->
+            <article class="hero">
+                <div class="container hero__container">
+                    <!-- левая часть -->
+                    <div class="hero__content">
+                        <h2 class="hero__title">Об игре</h2>
+
+                        <div class="hero__greetings">
+                            <p class="hero__quote">"И даже самый сильнейший дьявол может плакать, если теряет близкого ему человека"</p>
+
+                            <p class="hero__talk"> — Леди</p>
+                        </div>
+                        
+
+                        <div class="hero__desc">
+                            <p>Devil May Cry — видеоигра в жанре слэшера с элементами пазла, разработанная и изданная компанией Capcom в 2001 году эксклюзивно для консоли PlayStation 2. Первая игра в одноимённой серии и вторая в основной хронологии</p>
+                        </div>
+                    </div>
+                    <!-- правая -->
+                    <div class="hero_img">
+                        <img src="pics/preview.png" alt="preview dmc">
+                    </div>
+                </div>
+            </article>
+            
+            <!-- средняя часть -->
+            <article class="popular">
+                <div class="container popular__container">
+                    <!-- список блоков -->
+                    <ul class="popular__list">
+                        <li class="popular__items">
+                            <a href="characters.html" class="popular__links">
+                                <div class="popular__img">
+                                    <img src="pics/pers.svg" alt="dante fill">
+                                </div>
+                                <p class="popular__desc">
+                                    персонажи
+                                </p>
+                            </a>
+                        </li>
+                        <li class="popular__items">
+                            <!-- ссылка -->
+                            <a href="locations.html" class="popular__links">
+                                <!-- картинка -->
+                                <div class="popular__img">
+                                    <img src="pics/cast.svg" alt="castle">
+                                </div>
+                                <!-- название -->
+                                <p class="popular__desc">
+                                    локации
+                                </p>
+                            </a>
+                        </li>
+                        <li class="popular__items">
+                            <a href="#" class="popular__links"> <!-- сюда пойдет часть из чарактер.хтмл с врагами -->
+                                <div class="popular__img">
+                                    <img src="pics/enem.svg" alt="dragon">
+                                </div>
+                                <p class="popular__desc">
+                                    враги
+                                </p>
+                            </a>
+                        </li>
+                        <li class="popular__items">
+                            <a href="items.html" class="popular__links"> 
+                                <div class="popular__img">
+                                    <img src="pics/items.svg" alt="weapon">
+                                </div>
+                                <p class="popular__desc">
+                                    предметы и оружие
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="bottom">
+                <div class="container bottom__container">
+                    <div class="info-pravki">
+                        <h2>Последние правки</h2>
+                        <ul class="pravki__list">
+                            <li class="pravki__items">
+                                <p class="pravki__list-text">
+                                    Ремейк — обновлена информация
+                                </p>
+                            </li>
+
+                            <li class="pravki__items">
+                                <p class="pravki__list-text">
+                                    Данте — добвлены новые данные в биографию
+                                </p>
+                            </li>
+
+                            <li class="pravki__items">
+                                <p class="pravki__list-text">
+                                    Битва с Фантомом — добавлены новые стратегии
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-quote">
+                        <h2>Об игре</h2>
+                        <div class="quote__p">
+                            <p>
+                                Devil May Cry — первая игра в серии Devil May Cry, созданная и срежиссированная Хидеки Камией, главным героем которой является Данте, сын Спарды.
+                            </p>
+                        </div>
+
+                        <div class="quote__conect">
+                            <div class="quote__game">
+                                <p>
+                                    «И даже самый сильнейший дьявол может плакать, если теряет близкого ему человека»
+                                </p>
+                            </div>
+
+                            <div class="quote__speaker">
+                                <p>
+                                    — Леди
+                                </p>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+<script src="bbbb.js"></script>
+</body>
